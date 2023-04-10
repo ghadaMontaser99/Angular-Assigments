@@ -1,0 +1,104 @@
+
+<h1 style="text-align: center; float:left ;">{{Store_name|uppercase}}</h1>
+<img  style="text-align: center; padding-left: 20px;"[src]="Store_Logo" width="100" >
+<div clean:both></div>
+<h3 *ngIf="NoDicount; then thenBlock; else elseBlock">
+
+</h3>
+
+<ng-template #thenBlock>
+    We offer an explicit discount of: {{Discount}}
+</ng-template>
+<ng-template #elseBlock>
+   
+</ng-template>
+<br/>
+<br/>
+
+
+<label for="CategoryList">Choose a Category:  </label>
+
+<select class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" name="CategoryList" id="CategoryList">
+  <option  *ngFor="let cat of CategoryList" value="cat.ID">{{cat.Name}}</option>
+ 
+</select>
+
+
+
+  <br/>
+<br/>
+
+
+<!--<div class="container">
+    <input type="text" [(ngModel)]="ClientName">
+    <button class="btn btn-dark" (click)="buyMethod()">Buy</button>
+</div>
+<div *ngIf="IsPurshased; then hideTable; else showMSG " class="container">
+</div>
+    <ng-template #hideTable >
+       
+     <table class="table" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Prod of ProductList">
+            <th scope="row">{{Prod.ID}}</th>
+            <td>{{Prod.Name}}</td>
+            <td>{{Prod.Quantity}}</td>
+            <td>{{Prod.Price}}</td>
+            <td><img src={{Prod.Img}} width="250px"> </td>
+
+          </tr>
+          
+        </tbody>
+      </table>
+    </ng-template>
+    <ng-template #showMSG> 
+       
+      <h1 style="text-align: center;">Thanks for purchasing from our Store  {{ClientName}}</h1>
+      <br/>
+    </ng-template>
+  -->
+
+  <div class="container">
+    <table class="table" >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Prod of ProductList">
+          <th scope="row">{{Prod.ID}}</th>
+          <td>{{Prod.Name}}</td>
+          <td>{{Prod.Quantity}}</td>
+          <td>{{Prod.Price}}</td>
+          <td><img src={{Prod.Img}} width="250px"> </td>
+
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  <button (click)="withoutDiscount()" class="btn btn-primary">without Discount</button>
+  <button (click)="withDiscount()" class="btn btn-success">with Discount</button>
+  <router-outlet></router-outlet>
+
+     
+     
+      
+
+
+  
+

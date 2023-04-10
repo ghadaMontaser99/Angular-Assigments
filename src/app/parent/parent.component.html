@@ -1,0 +1,29 @@
+<div class="container">
+<p>parent works!</p>
+<h2>Send List Of Products From Child To Parent</h2>
+
+<table class="table" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Prod of messageFromChild">
+        <th scope="row">{{Prod.ID}}</th>
+        <td>{{Prod.Name}}</td>
+        <td>{{Prod.Quantity}}</td>
+        <td>{{Prod.Price}}</td>
+        <td><img src={{Prod.Img}} width="250px"> </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+
+<app-child (childEvent)="messageFromChild=$event" ></app-child>
+</div>

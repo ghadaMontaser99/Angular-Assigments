@@ -1,0 +1,17 @@
+
+<div class="container" style="border:1px solid black ;">
+    <div class="row"> 
+<div class="card col-4" style="width: 18rem;" *ngFor="let user of ListOfsers">
+    <img src="./assets/happy.jpg" class="card-img-top" alt="...">
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">name: {{user.name}}</li>
+      <li class="list-group-item">user name:{{user.username}}</li>
+      <li class="list-group-item">Email: {{user.email}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+    </div>
+  </div>
+</div>
+</div>
